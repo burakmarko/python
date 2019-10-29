@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{article.article_title}}{% endblock %}
+
+{% block content %}
+<h1>Ваш останній запит</h1>
+<p>Особа:</p>
+<p>{{a.article_title}}</p>
+<p>Кошти:</p>
+{% if a.article_.text < 576000 %}
+<p>{{a.article_text}}</p>
+{% else %}
+<p>На жаль,банк не може надати вам кошти</p>
+ 
+
+
+{% endblock %}
