@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{article.article_title}}{% endblock %}
+
+{% block content %}
+<h1>Доброго дня, для отримання кредиту заповніть форму</h1>
+
+
+<h1>{{article.article_title}}</h1>
+
+<form method="POST">
+	{% csrf_token %}
+	<input type="text" required placeholder="Ваше ім'я" name="name"><br>
+	<!-- <textarea name="tetx" required="" placeholder="Кількість коштів які ви хочете сплатити" cols="20" rows ="10"></textarea>><br> -->
+	<input type="int" required placeholder="Кількість коштів" name="funds"><br>
+	<input type="date" required placeholder="дата" name="date"><br>
+
+	{% if sum+funds >= 517000 %}
+	<a href="error">
+		<button type="submit">Підтвердити</button>
+	</a>
+	{%else}
+	<button type="submit">Підтвердити</button>
+	{% endif %}
+</form>
+<a href="forma/">---
+</a>
+
+
+</form>
+
+
+
+{% endblock %}
